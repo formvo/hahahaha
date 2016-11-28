@@ -62,13 +62,11 @@ public class CViewpager_pro extends AppCompatActivity implements NavigationView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.viewpager_layout);
+        setContentView(R.layout.viewpager);
 
         Intent intent = getIntent();
 
         textView = (TextView)findViewById(R.id.tlbr_title);
-
-        textView.setText(intent.getExtras().getString("name"));
 
         /*Log.d("ITPANGPANG",""+intent.getExtras().getString("1"));*/
 
@@ -83,7 +81,7 @@ public class CViewpager_pro extends AppCompatActivity implements NavigationView.
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        SetNav();
+/*        SetNav();*/
     }
 
     private void SetNav()
@@ -119,27 +117,6 @@ public class CViewpager_pro extends AppCompatActivity implements NavigationView.
         {
             Intent intent = new Intent(CViewpager_pro.this, CViewpager_pro.class);
             nav_char = "정보처리";
-            intent.putExtra("name",nav_char);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_listview_sec)
-        {
-            Intent intent = new Intent(CViewpager_pro.this, CViewpager_sec.class);
-            nav_char = "정보보안";
-            intent.putExtra("name",nav_char);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_listview_cal)
-        {
-            Intent intent = new Intent(CViewpager_pro.this,CViewpager_cal.class);
-            nav_char = "전자계산기";
-            intent.putExtra("name",nav_char);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_listview_col)
-        {
-            Intent intent = new Intent(CViewpager_pro.this, CViewpager_col.class);
-            nav_char = "컬러리스트";
             intent.putExtra("name",nav_char);
             startActivity(intent);
         }
@@ -205,8 +182,6 @@ public class CViewpager_pro extends AppCompatActivity implements NavigationView.
 
             listview.setAdapter(adapter);
 
-            CDataArray.CData cData = null;
-
             switch (getArguments().getInt(ARG_SECTION_NUMBER))
             {
                 case 1:
@@ -216,10 +191,9 @@ public class CViewpager_pro extends AppCompatActivity implements NavigationView.
                     adapter.addItem("이름", "설명","PTP5AdtWg_U") ;
                     adapter.addItem("이름", "설명","9xJRjo9VZUg") ;
                     adapter.addItem("이름", "설명","PJlBVzkJj78") ;
+                    adapter.addItem("이름", "설명","PJlBVzkJj78") ;
                     break;
                 case 2:
-                    break;
-                case 3:
                     break;
             }
 
@@ -284,18 +258,16 @@ public class CViewpager_pro extends AppCompatActivity implements NavigationView.
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "기능사";
+                    return "필기";
                 case 1:
-                    return "산업기사";
-                case 2:
-                    return "기사";
+                    return "실기";
             }
             return null;
         }

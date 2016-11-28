@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CLoading">
+        <activity android:name=".CViewpager_pro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,11 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".CYoutubePlayer" />
-        <activity android:name=".CListView" />
-        <activity android:name=".CViewpager_pro" />
-        <activity android:name=".CViewpager_sec" />
-        <activity android:name=".CViewpager_cal" />
-        <activity android:name=".CViewpager_col" />
 
     </application>
 

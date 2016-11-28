@@ -19,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="30dp"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/background_light"
+        android:text="정보처리기사" />
 </android.support.v7.widget.Toolbar>
 
 

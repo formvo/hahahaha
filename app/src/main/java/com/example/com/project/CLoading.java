@@ -40,24 +40,6 @@ public class CLoading extends AppCompatActivity implements NavigationView.OnNavi
                  intent.putExtra("name",nav_char);
                  startActivity(intent);
                  break;
-             case R.id.btn_sec:
-                 Intent intent1 = new Intent(getApplicationContext(), CViewpager_sec.class);
-                 nav_char = "정보보안";
-                 intent1.putExtra("name",nav_char);
-                 startActivity(intent1);
-                 break;
-             case R.id.btn_cal:
-                 Intent intent2 = new Intent(getApplicationContext(), CViewpager_cal.class);
-                 nav_char = "전자계산기";
-                 intent2.putExtra("name",nav_char);
-                 startActivity(intent2);
-                 break;
-             case R.id.btn_col:
-                 Intent intent3 = new Intent(getApplicationContext(), CViewpager_col.class);
-                 nav_char = "컬러리스트";
-                 intent3.putExtra("name",nav_char);
-                 startActivity(intent3);
-                 break;
          }
      }
 
@@ -93,27 +75,6 @@ public class CLoading extends AppCompatActivity implements NavigationView.OnNavi
         {
             Intent intent = new Intent(CLoading.this, CViewpager_pro.class);
             nav_char = "정보처리";
-            intent.putExtra("name",nav_char);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_listview_sec)
-        {
-            Intent intent = new Intent(CLoading.this, CViewpager_sec.class);
-            nav_char = "정보보안";
-            intent.putExtra("name",nav_char);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_listview_cal)
-        {
-            Intent intent = new Intent(CLoading.this,CViewpager_cal.class);
-            nav_char = "전자계산기";
-            intent.putExtra("name",nav_char);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_listview_col)
-        {
-            Intent intent = new Intent(CLoading.this, CViewpager_col.class);
-            nav_char = "컬러리스트";
             intent.putExtra("name",nav_char);
             startActivity(intent);
         }
