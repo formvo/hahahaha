@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="?actionBarSize"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/tlbr_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:textColor="@android:color/background_light"
+            android:text="목록" />
+    </android.support.v7.widget.Toolbar>
+
+    <Button
+        android:text="정보처리"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_pro"
+        android:onClick="onClickButton" />
+
+    <Button
+        android:text="정보보안"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_sec"
+        android:onClick="onClickButton"/>
+
+    <Button
+        android:text="전자계산기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_cal"
+        android:onClick="onClickButton"/>
+
+    <Button
+        android:text="컬러리스트"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_col"
+        android:onClick="onClickButton"/>
+
+</LinearLayout>

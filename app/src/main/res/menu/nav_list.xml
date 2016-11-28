@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="자격증">
+        <menu>
+            <item
+                android:id="@+id/nav_listview_pro"
+                android:title="정보처리" />
+            <item
+            android:id="@+id/nav_listview_sec"
+            android:title="정보보안" />
+            <item
+            android:id="@+id/nav_listview_cal"
+            android:title="전자계산기" />
+            <item
+            android:id="@+id/nav_listview_col"
+            android:title="컬러리스트" />
+        </menu>
+    </item>
+</menu>
