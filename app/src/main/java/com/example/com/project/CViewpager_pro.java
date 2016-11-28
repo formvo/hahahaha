@@ -9,7 +9,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -23,11 +22,17 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class CViewpager extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+
+public class CViewpager_pro extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -112,35 +117,31 @@ public class CViewpager extends AppCompatActivity implements NavigationView.OnNa
 
         if(id == R.id.nav_listview_pro)
         {
-            Intent intent = new Intent(getApplicationContext(), CViewpager.class);
+            Intent intent = new Intent(CViewpager_pro.this, CViewpager_pro.class);
             nav_char = "정보처리";
             intent.putExtra("name",nav_char);
             startActivity(intent);
-            finish();
         }
         else if (id == R.id.nav_listview_sec)
         {
-            Intent intent = new Intent(getApplicationContext(), CViewpager.class);
+            Intent intent = new Intent(CViewpager_pro.this, CViewpager_sec.class);
             nav_char = "정보보안";
             intent.putExtra("name",nav_char);
             startActivity(intent);
-            finish();
         }
         else if (id == R.id.nav_listview_cal)
         {
-            Intent intent = new Intent(getApplicationContext(),CViewpager.class);
+            Intent intent = new Intent(CViewpager_pro.this,CViewpager_cal.class);
             nav_char = "전자계산기";
             intent.putExtra("name",nav_char);
             startActivity(intent);
-            finish();
         }
         else if (id == R.id.nav_listview_col)
         {
-            Intent intent = new Intent(getApplicationContext(), CViewpager.class);
+            Intent intent = new Intent(CViewpager_pro.this, CViewpager_col.class);
             nav_char = "컬러리스트";
             intent.putExtra("name",nav_char);
             startActivity(intent);
-            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -181,14 +182,27 @@ public class CViewpager extends AppCompatActivity implements NavigationView.OnNa
 
             final CListViewAdapter adapter;
 
+            ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getContext())
+                    .threadPriority(Thread.NORM_PRIORITY - 2)
+                    .denyCacheImageMultipleSizesInMemory()
+                    .discCacheFileNameGenerator(new Md5FileNameGenerator())
+                    .tasksProcessingOrder(QueueProcessingType.LIFO)
+                    .writeDebugLogs() // Remove for release app
+                    .build();
+
+            ImageLoader.getInstance().init(config);
+
 
             final ScrollView sv_scrollview = (ScrollView)rootView.findViewById(R.id.scrollview);
             final Button btn_more = (Button)rootView.findViewById(R.id.btn_more);
+
+            ImageView imageView = (ImageView)rootView.findViewById(R.id.imageView1);
 
             // Adapter 생성
             adapter = new CListViewAdapter() ;
 
             ListView listview = (ListView) rootView.findViewById(R.id.listview);
+
             listview.setAdapter(adapter);
 
             CDataArray.CData cData = null;
@@ -197,8 +211,11 @@ public class CViewpager extends AppCompatActivity implements NavigationView.OnNa
             {
                 case 1:
                     // 첫 번째 아이템 추가.00
-                    adapter.addItem(ContextCompat.getDrawable(getContext(), R.mipmap.ic_launcher),
-                            "이름", "설명","STL2X74DGNA") ;
+                    adapter.addItem("처리", "설명","STL2X74DGNA") ;
+                    adapter.addItem("이름", "설명","pDGcglPDs-w") ;
+                    adapter.addItem("이름", "설명","PTP5AdtWg_U") ;
+                    adapter.addItem("이름", "설명","9xJRjo9VZUg") ;
+                    adapter.addItem("이름", "설명","PJlBVzkJj78") ;
                     break;
                 case 2:
                     break;

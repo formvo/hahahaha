@@ -20,7 +20,11 @@
         </activity>
         <activity android:name=".CYoutubePlayer" />
         <activity android:name=".CListView" />
-        <activity android:name=".CViewpager" />
+        <activity android:name=".CViewpager_pro" />
+        <activity android:name=".CViewpager_sec" />
+        <activity android:name=".CViewpager_cal" />
+        <activity android:name=".CViewpager_col" />
+
     </application>
 
 </manifest>

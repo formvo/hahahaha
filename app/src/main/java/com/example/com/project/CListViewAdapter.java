@@ -1,13 +1,14 @@
 package com.example.com.project;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 
@@ -50,7 +51,8 @@ public class CListViewAdapter extends BaseAdapter {
         CListViewItem listViewItem = listViewItemList.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
-        iconImageView.setImageDrawable(listViewItem.getIcon());
+        /*iconImageView.setImageDrawable(listViewItem.getIcon());*/
+        ImageLoader.getInstance().displayImage(CDefineUrl.youtubeThumbnail1 + "STL2X74DGNA" + CDefineUrl.youtubeThumbnail2 + "uhTarzC9Dt92XR0w7zArBENo1Mo", iconImageView);
         titleTextView.setText(listViewItem.getTitle());
         descTextView.setText(listViewItem.getDesc());
 
@@ -70,10 +72,9 @@ public class CListViewAdapter extends BaseAdapter {
     }
 
     // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-    public void addItem(Drawable icon,String title, String ex, String url) {
+    public void addItem(String title, String ex, String url) {
         CListViewItem item = new CListViewItem();
 
-        item.setIcon(icon);
         item.setTitle(title);
         item.setDesc(ex);
         item.setUrl(url);
