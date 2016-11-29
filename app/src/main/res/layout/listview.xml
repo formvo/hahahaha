@@ -3,24 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/scrollview"
         android:fillViewport="true"
-        android:id="@+id/scrollview">
+        android:clipToPadding="false"
+        android:layout_weight="1.04">
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <Button
-                android:text="more"
-                android:layout_width="match_parent"
-                android:layout_gravity="bottom"
-                android:id="@+id/btn_more"
-                android:layout_height="60dp"
-                android:visibility="invisible"/>
 
             <ListView
            android:layout_width="match_parent"
@@ -29,4 +24,12 @@
 
         </FrameLayout>
     </ScrollView>
+
+    <Button
+        android:text="more"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:id="@+id/btn_more"
+        android:layout_height="60dp"
+        android:visibility="invisible"/>
 </LinearLayout>

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Created by 장호 on 2016-11-28.
  */
-public class CWrittenListData
+public class CPracticeListData
 {
     public class CData
     {
@@ -21,7 +21,7 @@ public class CWrittenListData
         public String m_imgUrl2 = null;
     }
 
-    private static CWrittenListData instance = null;
+    private static CPracticeListData instance = null;
 
     ArrayList<CData> m_list = null;
 
@@ -29,14 +29,14 @@ public class CWrittenListData
      * *
      */
 
-    public static CWrittenListData GetInstance()
+    public static CPracticeListData GetInstance()
     {
         if(instance != null)
         {
             return instance;
         }
 
-        instance = new CWrittenListData();
+        instance = new CPracticeListData();
 
         return instance;
     }
@@ -52,7 +52,7 @@ public class CWrittenListData
         try
         {
             jsonObject = new JSONObject(strJson);
-            jsonArray = jsonObject.getJSONArray("Pro_Written");
+            jsonArray = jsonObject.getJSONArray("Pro_Practice");
 
             /**/
             JSONObject json = null;

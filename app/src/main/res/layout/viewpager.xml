@@ -28,7 +28,7 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.com.project.CViewpager_pro">
+    tools:context="com.example.com.project.WrittenList.Client.CListClient">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

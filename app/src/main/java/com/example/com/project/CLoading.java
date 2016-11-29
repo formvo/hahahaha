@@ -13,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.com.project.WrittenList.Client.CListClient;
+
 public class CLoading extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     Toolbar toolbar;
@@ -35,7 +37,7 @@ public class CLoading extends AppCompatActivity implements NavigationView.OnNavi
          switch (v.getId())
          {
              case R.id.btn_pro:
-                 Intent intent = new Intent(getApplicationContext(), CViewpager_pro.class);
+                 Intent intent = new Intent(getApplicationContext(), CListClient.class);
                  nav_char = "정보처리";
                  intent.putExtra("name",nav_char);
                  startActivity(intent);
@@ -73,7 +75,7 @@ public class CLoading extends AppCompatActivity implements NavigationView.OnNavi
 
         if(id == R.id.nav_listview_pro)
         {
-            Intent intent = new Intent(CLoading.this, CViewpager_pro.class);
+            Intent intent = new Intent(CLoading.this, CListClient.class);
             nav_char = "정보처리";
             intent.putExtra("name",nav_char);
             startActivity(intent);
