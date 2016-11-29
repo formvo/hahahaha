@@ -1,4 +1,4 @@
-package com.example.com.project;
+package com.example.com.project.WrittenList.Client;
 
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -27,12 +27,16 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.com.project.CListViewAdapter;
+import com.example.com.project.CListViewItem;
+import com.example.com.project.CYoutubePlayer;
+import com.example.com.project.R;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
-public class CViewpager_pro extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class CWrittenListClient extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -115,7 +119,7 @@ public class CViewpager_pro extends AppCompatActivity implements NavigationView.
 
         if(id == R.id.nav_listview_pro)
         {
-            Intent intent = new Intent(CViewpager_pro.this, CViewpager_pro.class);
+            Intent intent = new Intent(CWrittenListClient.this, CWrittenListClient.class);
             nav_char = "정보처리";
             intent.putExtra("name",nav_char);
             startActivity(intent);
